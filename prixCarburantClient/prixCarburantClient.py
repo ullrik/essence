@@ -60,7 +60,8 @@ class PrixCarburantClient(object):
         except BaseException:
             pass
         if valeur == 0:
-            valeur = None
+            valeur = "-"
+            maj = self.lastUpdate.strftime('%Y-%m-%d %H:%M:%S')
         else:
             if isinstance(valeur, int):
                 valeur = float(valeur) / 1000
